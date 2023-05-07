@@ -48,7 +48,7 @@ void append(int data){
     }
 }
 
-int popLeft(){
+int popFront(){
     Node *temp = front;
     int data = temp->data;
     front = front -> next;
@@ -73,7 +73,7 @@ void printList(){
     printf("\n");
 }
 
-void deleteData(int value){
+void remove(int value){
     if(!isEmpty()){
         Node *temp = front;
         int i = 0;
@@ -97,7 +97,7 @@ void deleteData(int value){
     }
 }
 
-void deleteAt(int pos){
+void removeAt(int pos){
     if(!isEmpty()){
         Node *temp = front;
         int i = 0;
@@ -144,7 +144,7 @@ void main(){
     printf("Make Linked List\n");
 
     while(1){
-        printf("1: append / 2: appendFront / 3: searchData / 4: popLeft / 7: deleteAt / 8: deleteData / 9. printList / 0: exit\n");
+        printf("1: append / 2: appendFront / 3: pop / 4: popFront / 7: remove / 8: removeAt / 9: searchData / 0: exit\n");
         printf("Please select option: ");
         scanf("%d",&input);
 
@@ -163,23 +163,27 @@ void main(){
             appendFront(value);
         }
         else if (input == 3){
-            printf("searchData: ");
-            scanf("%d", &value);
-            searchData(value);
+            printf("pop: %d", pop());
+            printf("\n");
         }
         else if (input == 4){
-            printf("popLeft: %d", popLeft());
+            printf("popFront: %d", popLeft());
             printf("\n");
         }
         else if (input == 7){
-            printf("deleteAt: ");
-            scanf("%d", &pos);
-            deleteAt(pos);
+            printf("remove: ");
+            scanf("%d", &value);
+            remove(value);
         }
         else if (input == 8){
-            printf("deleteData: ");
+            printf("removeAt: ");
+            scanf("%d", &pos);
+            removeAt(pos);
+        }
+        else if (input == 9){
+            printf("searchData: ");
             scanf("%d", &value);
-            deleteData(value);
+            searchData(value);
         }
         printf("deque: ");
         printList();
