@@ -4,6 +4,7 @@
 
 ### Stack - 스택
 ### Queue - 큐
+### Deque - 덱 (양방향 큐)
 ### Linked List - 링크드리스트
 ### Heap - 힙
 ### Tree - 트리
